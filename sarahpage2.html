@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"><style>
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* dreamy gradient */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(270deg, #ff758c, #ff7eb3, #fad0c4);
+  background-size: 600% 600%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+  0% {background-position: 0%}
+  50% {background-position: 100%}
+  100% {background-position: 0%}
+}
+
+/* floating soft hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  opacity: 0.5;
+  animation: floatUp linear infinite;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-110vh); }
+}
+
+/* glass card */
+.card {
+  position: relative;
+  z-index: 2;
+  width: 360px;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+  text-align: center;
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(30px);} 
+  to {opacity:1; transform: translateY(0);} 
+}
+
+/* image */
+.img-box {
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-box img {
+  max-height: 100%;
+  border-radius: 15px;
+}
+
+/* romantic text */
+h2 {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* glowing button */
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,77,109,0.7);
+  transition: 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 0 25px rgba(255,77,109,1);
+  transform: scale(1.05);
+}
+
+</style></head><body><!-- floating hearts --><script>
+for(let i=0;i<35;i++){
+  let h = document.createElement("div");
+  h.className = "heart";
+  h.innerText = "💖";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.animationDuration = (4 + Math.random()*6) + "s";
+  document.body.appendChild(h);
+}
+</script><div class="card">  <div class="img-box">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUycG0xaWlqdHYydm93ZjNzeWwxNXY3aHc3eWp4NThoNXVkNDAwc3VqeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m2GGGWxexjwqnHQnZI/giphy.gif">
+  </div>  <h2>Hey… ❤️</h2>  <p>
+    I know I hurt you… and I hate that I’m the reason behind your pain 💔<br><br>You didn’t deserve that, not even a little 😞<br>
+But I swear… what I feel for you is real, and it’s only for you ❤️<br><br>I’m not perfect 🥺
+but I’m trying to be better… for you ❤️
+you deserve the best, and I’ll become that 🫶✨<br><br>
+
+Please… give me one chance to make things right 💞
+
+  </p><button onclick="nextPage()">Forgive Me? 🥺</button>
+
+</div><script>
+function nextPage(){
+  document.body.innerHTML = `
+  <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
+    <h2>One last thing... ❤️</h2>
+    <p style="max-width:300px;text-align:center;">I promise I’ll never break your trust again. Just stay… 💞</p>
+  </div>
+  `;
+}
+</script></body>
+</html>

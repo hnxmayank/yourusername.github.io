@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sorry 🥺</title><style>
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* LIQUID GRADIENT BACKGROUND */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 600% 600%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
+/* EMOJIS UNDER LAYER */
+.emoji {
+    position: fixed;
+    bottom: -20px;
+    font-size: 18px;
+    opacity: 0.6;
+    animation: floatUp linear infinite;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-110vh); }
+}
+
+/* GLASS BOX */
+.box {
+    position: relative;
+    z-index: 2;
+    width: 340px;
+    height: 420px;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.3);
+
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* IMAGE FIX */
+.img-container {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+    transition: opacity 0.4s ease;
+}
+
+/* TEXT */
+p {
+    margin: 10px 0;
+    font-weight: 600; /* BOLDER TEXT */
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: opacity 0.4s ease;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+/* GLOW EFFECT */
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+    box-shadow: 0 0 15px rgba(255,77,109,0.6);
+}
+
+#yesBtn:hover {
+    box-shadow: 0 0 25px rgba(255,77,109,1);
+}
+
+/* NO BUTTON */
+#noBtn {
+    position: fixed;
+    background: #ccc;
+    z-index: 3;
+}
+</style></head><body><!-- BACKGROUND MUSIC --><audio id="bgMusic" autoplay loop>
+    <source src="https://files.catbox.moe/6l9v9x.mp3" type="audio/mpeg">
+</audio><script>
+window.addEventListener("click", () => {
+    document.getElementById("bgMusic").play();
+});
+</script><!-- FLOATING EMOJIS --><script>
+const emojiList = ["💖","💕","💗","💘","💝","🌸","✨","🥺","❤️","💞"];
+
+for(let i=0;i<40;i++){
+    let e = document.createElement("div");
+    e.className = "emoji";
+    e.innerText = emojiList[Math.floor(Math.random()*emojiList.length)];
+    e.style.left = Math.random()*100 + "vw";
+    e.style.animationDuration = (4 + Math.random()*6) + "s";
+    document.body.appendChild(e);
+}
+</script><div class="box">
+    <div class="img-container">
+        <img id="gif" src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyeWdhZ3lpOW1nb2c4Njl2OG9uZm8ybWdlNzhicjQ0bWZvYXkydWMzciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uGs3nvw76BfzPWnSv6/giphy.gif">
+    </div><p id="text">🫀 Sorry na… Ab Kisi Aur Ko Nhi Bolra Vaisa 🥺</p>
+
+<div>
+    <button id="yesBtn">Yes 🥺</button>
+</div>
+
+</div><button id="noBtn">No 😤</button>
+
+<script>
+let count = 0;
+
+const gifs = [
+"https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyczM4dm5oNHJhcW02YTVnZWZoYnlmZjVoNTVjODFzOWR3dnk0aHV4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SEgSwox3DSlx7QH4xQ/giphy.gif",
+"https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNXFrbG1oNXo2cDg5b2Z0N2NsMmR1N3V2cW04dzl0cDMxeWpobzVndyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Lz6971fkGSgCMOOncl/giphy.gif",
+"https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUydTk5dm9qdW9oOTE0NHhya25pcGR6aHc5bWd4YTd6bDJ1ZjlwdWVrYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yXPquATCb8kGk/giphy.gif",
+"https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyZG84eGl4a214c29iemJ2ZmlpdXloNnQ5a24waTY5cnV3Z2J2eXY5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KCkR2moGEEaeEdOC2M/giphy.gif",
+"https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyZXYwaGs4YWEycGpudGw4Y2Z5cDVsZzR2NnpkMHJyZHJ4cTA3dzB3eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sthmCnCpfr8M8jtTQy/giphy.gif",
+"https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUydm95MTJxNDJ5NDY3NmNwZXJldngyNzl2ejVkM3lhcXhnb25ucXhmMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/901mxGLGQN2PyCQpoc/giphy.gif",
+"https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyazRjcWJubGt3MWZuc2N2cWJzcWVwbTljZWNpdTFyZjRreHE5cGtmMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LXK3g12AXBKPsCEHDx/giphy.gif",
+"https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUybTU4dTAwOWlieTU1dm96ZjhyZ3diaXUxanZpOWc2dGpnbzlubmtiZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dvxq3BtNLK6KEgTryW/giphy.gif"
+];
+
+const texts = [
+"Acha thik hai meri hi galti thi 😔",
+"Gussa cute lagta hai but itna bhi mt kroo!! 😭",
+"Please maan ja 🥺",
+"Main sudhar jaunga 😤",
+"Ab toh maaf kr de 😭❤️",
+"Ignore mat kar pagl 😔",
+"Main ro raha hu fr 😭",
+"Last baar… maan ja ❤️🥺"
+];
+
+const gif = document.getElementById("gif");
+const text = document.getElementById("text");
+const noBtn = document.getElementById("noBtn");
+
+gifs.forEach(src => {
+    let img = new Image();
+    img.src = src;
+});
+
+noBtn.addEventListener("click", () => {
+
+    gif.style.opacity = 0;
+    text.style.opacity = 0;
+
+    setTimeout(() => {
+        if(count < gifs.length){
+            gif.src = gifs[count];
+            text.innerText = texts[count];
+            count++;
+        }
+        gif.style.opacity = 1;
+        text.style.opacity = 1;
+    }, 300);
+
+    moveButton();
+});
+
+function moveButton(){
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    let x = Math.random() * maxX;
+    let y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+moveButton();
+
+document.getElementById("yesBtn").onclick = () => {
+    document.body.innerHTML = `
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
+        <h2>Loading love... 💖</h2>
+        <div style="width:300px;height:12px;background:#eee;border-radius:10px;overflow:hidden;">
+            <div id="bar" style="height:100%;width:0;background:#ff4d6d;"></div>
+        </div>
+    </div>
+    `;
+
+    let width = 0;
+    let interval = setInterval(() => {
+        width += 2;
+        document.getElementById("bar").style.width = width + "%";
+        if(width >= 100){
+            clearInterval(interval);
+            window.location.href = "sarahpage2.html";
+        }
+    }, 30);
+};
+</script></body>
+</html>
